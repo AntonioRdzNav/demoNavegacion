@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="map_file" value="$(find mybot_provide_map)/maps/test_map.yaml"></arg>
+  <node pkg="map_server" type="map_server" name="map_server"  args="$(arg map_file)">
+    
+  </node>
+</launch>

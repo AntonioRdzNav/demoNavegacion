@@ -1,0 +1,46 @@
+////////////////////////////////////ROS TOOLS////////////////////////////////////////
+rqt_graph						//generate nodes graph
+
+////////////////////////////////////LAUNCH////////////////////////////////////////
+roslaunch mybot_gazebo mybot_world.launch		//launch gazebo
+roslaunch mybot_navigation gmapping_demo.launch		//launch gmapping
+roslaunch mybot_navigation mybot_teleop.launch 	    	//launch teleop
+roslaunch mybot_description mybot_rviz.launch		//launch rviz
+roslaunch mybot_provide_map provide_map.launch      	//provide map to rviz
+roslaunch mybot_navigation amcl_demo.launch		//launch amcl algorithm
+
+////////////////////////////////////TOPICS////////////////////////////////////////
+rostopic pub /cmd_vel geometry_msgs/twist (plus tab)		//publish velocity commands
+rostopic pub /move_base/goal move_base_msgs/MoveBaseActionGoal "header: 
+  seq: 0
+  stamp: 
+    secs: 18751
+    nsecs: 267000000
+  frame_id: ''
+goal_id: 
+  stamp: 
+    secs: 0
+    nsecs:         0
+  id: ''
+goal: 
+  target_pose: 
+    header: 
+      seq: 0
+      stamp: 
+        secs: 18751
+        nsecs: 267000000
+      frame_id: "odom"
+    pose: 
+      position: 
+        x: -1.2189078331
+        y: -0.974750757217
+        z: 0.0
+      orientation: 
+        x: 0.0
+        y: 0.0
+        z: 0.129061733548
+        w: 0.99163656091"
+
+////////////////////////////////////PACKAGE////////////////////////////////////////
+rosrun image_view image_view image:=/mybot/camera1/image_raw	//see pubished info of camera1
+rosrun map_server map_saver -f ~/path/to/folder/map_name	    //save map
