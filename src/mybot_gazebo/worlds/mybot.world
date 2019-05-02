@@ -7,7 +7,7 @@
       <uri>model://willowgarage</uri>
     </include> -->
     <include>
-      <uri>/home/antonio/building_editor_models/RobotHouse</uri>
+      <uri>/home/antonio/ROS/mybot_ws/src/mybot_gazebo/worlds/RobotHouse</uri>
     </include>       
 
     <include>
